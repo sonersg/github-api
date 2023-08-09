@@ -12,7 +12,7 @@ const Header = () => {
                     <div className="flex items-center h-9">
                         <Link
                             href="https://acme-rockets-soner.onrender.com/"
-                            className="text-2xl hover:scale-125 transition ease-in-out duration-500"
+                            className="text-2xl hover:scale-125 transition ease-in-out duration-500 text-white"
                             target="_blank"
                         >
                             Soner
@@ -20,7 +20,7 @@ const Header = () => {
                     </div>
                     <div className="flex items-center h-9">
                         <button
-                            ld="hamburger-button"
+                            id="hamburger-button"
                             className="md:hidden text-white text-2xl"
                             onClick={() => {
                                 setshowMenu(true);
@@ -29,12 +29,15 @@ const Header = () => {
                             &#9776;
                         </button>
                         <nav id="links" className="hidden md:block text-lg">
-                            <Link href="/" className="px-2 hover:bg-slate-800">
+                            <Link
+                                href="/"
+                                className="px-2 hover:bg-slate-800 text-white"
+                            >
                                 Home
                             </Link>
                             <Link
                                 href="/about"
-                                className="px-2 hover:bg-slate-800"
+                                className="px-2 hover:bg-slate-800 text-white"
                             >
                                 About
                             </Link>
@@ -47,13 +50,13 @@ const Header = () => {
                 id="mobile-nav-menu"
                 className={
                     showMenu
-                        ? "w-full h-screen absolute top-0 bg-rose-800 --- transition ease-in-out delay-150 hover:bg-indigo-500 duration-700"
+                        ? "w-full h-screen absolute top-0 bg-rose-800 --- transition ease-in-out delay-150 hover:bg-indigo-500 duration-700 z-10"
                         : " hidden "
                 }
             >
                 <div className="flex justify-end">
                     <button
-                        ld="close-button"
+                        id="close-button"
                         className="text-white text-6xl p-3"
                         onClick={() => {
                             setshowMenu(false);
@@ -62,17 +65,17 @@ const Header = () => {
                         &times;
                     </button>
                 </div>
-                <nav id="links" className=" ">
+                <nav id="links" className="text-white">
                     <Link
                         href="/"
-                        className="hover:bg-slate-800 block text-center py-2 my-3 text-3xl"
+                        className="hover:bg-slate-800 block text-center py-2 my-3 text-3xl text-white"
                         onClick={() => setshowMenu(false)}
                     >
                         Home
                     </Link>
                     <Link
                         href="/about"
-                        className="hover:bg-slate-800 block text-center py-2 my-3 text-3xl"
+                        className="hover:bg-slate-800 block text-center py-2 my-3 text-3xl text-white"
                         onClick={() => setshowMenu(false)}
                     >
                         About

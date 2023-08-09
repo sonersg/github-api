@@ -18,9 +18,9 @@ function Repos() {
             setRepos(data);
         }
         fetchRepos(localStorage.getItem("reposContext") || data.username);
-        console.log("useEffect");
-        console.log("repos Component", data.username);
-        console.log(`https://api.github.com/users/${data.username}/repos`);
+        console.log("useEffect in repos");
+        // console.log("repos Component", data.username);
+        // console.log(`https://api.github.com/users/${data.username}/repos`);
     }, []);
     // const repos = await fetchRepos(username);
 

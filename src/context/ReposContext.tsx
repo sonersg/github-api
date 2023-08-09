@@ -2,6 +2,7 @@
 import {
     createContext,
     useState,
+    useEffect,
     ReactNode,
     Dispatch,
     SetStateAction,
@@ -12,8 +13,6 @@ type UserContextType = {
     setUsername: Dispatch<SetStateAction<string>>;
 };
 
-// const ReposContex = createContext<Partial<UserContextType>>({});
-
 const ReposContex = createContext<UserContextType>({
     username: "sonersggggggggggggggggg",
     setUsername: (username: string) => {},
@@ -22,11 +21,13 @@ const ReposContex = createContext<UserContextType>({
 type ReposProviderProps = {
     children: ReactNode;
 };
-
 export const ReposProvider = ({ children }: ReposProviderProps) => {
-    const [username, setUsername] = useState(
-        localStorage.getItem("reposContext") || "soner"
-    );
+    const [username, setUsername] = useState("soner");
+
+    useEffect(() => {
+        const local = localStorage.getItem("reposContext") || "soner";
+        setUsername(local);
+    });
 
     // console.log("reposContext", username);
 
